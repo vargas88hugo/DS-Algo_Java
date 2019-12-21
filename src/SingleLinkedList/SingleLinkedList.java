@@ -23,6 +23,9 @@ public class SingleLinkedList {
 		head.setNext(null);
 		tail = head;
 		size = 1;
+		
+		System.out.println("The Single Linked List has been created and has a head of value " + nodeValue);
+		
 		return head;
 	}
 
@@ -63,8 +66,10 @@ public class SingleLinkedList {
 		
 		if (!existsLinkedList()) {
 			System.out.println("The Linked List does not exists.");
+			return;
 		} else if (index > size || index < 0) {
-			System.out.println("The index is out of range.");
+			System.out.println("The index " + index + " is out of range.");
+			return;
 		} else if (index == 0) {
 			node.setNext(head);
 			head = node;
@@ -85,8 +90,13 @@ public class SingleLinkedList {
 			node.setNext(nextNode);
 		}
 		setSize(getSize() + 1);
+		System.out.println("The node of value " + nodeValue + " and index " + index + " has been created");
 	}
 	
+	/**
+	 * Overloading method of insertInLinkedList
+	 * @param nodeValue	Integer value of the node
+	 */
 	public void insertInLinkedList(int nodeValue) {
 		insertInLinkedList(nodeValue, size);
 	}
@@ -104,6 +114,10 @@ public class SingleLinkedList {
 	 * Method that prints the Single Linked List
 	 */
 	public void printSingleLinkedList() {
+		if (!existsLinkedList()) {
+			System.out.println("The Linked List does not exists.");
+			return;
+		}
 		SingleNode temp = head;
 		
 		while (temp != null) {
@@ -122,8 +136,10 @@ public class SingleLinkedList {
 		
 		if (!existsLinkedList()) {
 			System.out.println("The Linked List does not exists.");
+			return;
 		} else if (index >= size || index < 0) {
-			System.out.println("The index is out of range.");
+			System.out.println("The index " + index + " is out of range.");
+			return;
 		} else if (index == 0) {
 			head = head.getNext();
 			setSize(getSize() - 1);
@@ -138,7 +154,6 @@ public class SingleLinkedList {
 			}
 			tail = temp;
 			tail.setNext(null);
-			setSize(getSize() - 1);
 		} else {
 			SingleNode temp = head;
 			int count = 0;
@@ -148,7 +163,42 @@ public class SingleLinkedList {
 				count++;
 			}
 			temp.setNext(temp.getNext().getNext());
-			setSize(getSize() - 1);
 		}
+		setSize(getSize() - 1);
+		System.out.println("The node of index " + index + " has been deleted");
+	}
+	
+	/**
+	 * This method prints the node of the given index. If the index doesn't
+	 * exists, nothing will be deleted
+	 * @param index	Node position to print
+	 */
+	public void printNode(int index) {
+		if (!existsLinkedList()) {
+			System.out.println("The Linked List does not exists.");
+		} else if (index >= size || index < 0) {
+			System.out.println("The index " + index + " is out of range.");
+		} else if (index == 0) {
+			System.out.println("This is the node of value " + head.getValue() + " and index " + index + ".");
+		} else if (index == size - 1) {
+			System.out.println("This is the node of value " + tail.getValue() + " and index " + index + ".");
+		} else {
+			SingleNode temp = head;
+			int count = 0;
+			
+			while (count < index) {
+				temp = temp.getNext();
+				count++;
+			}
+			
+			System.out.println("This is the node of value " + temp.getValue() + " and index " + index + ".");
+		}
+	}
+	
+	public void deleteLinkedList() {
+		head = null;
+		tail = null;
+		size = 0;
+		System.out.println("The Single Linked List has been deleted.");
 	}
 }
