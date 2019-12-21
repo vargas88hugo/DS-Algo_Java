@@ -1,5 +1,10 @@
 package SingleLinkedList;
 
+/**
+ * This class provides the nodes of the Single Linked List. the nodes
+ * are composed with an integer value and a pointer to the next node
+ * @author Hugo Vargas
+ */
 public class SingleNode {
 	private int value;
 	private SingleNode next;

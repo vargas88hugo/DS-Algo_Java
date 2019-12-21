@@ -7,14 +7,23 @@ public class Main {
 		SingleLinkedList newList = new SingleLinkedList();
 		newList.createSingleLinkedList(5);
 		
+		newList.insertInLinkedList(99);
+		
+		newList.insertInLinkedList(1);
+		
+		newList.insertInLinkedList(74);
+		
+		newList.insertInLinkedList(8);
+		
 		newList.printSingleLinkedList();
 		
-		System.out.println(newList.getSize());
+		System.out.println("Size: " + newList.getSize());
 		
-		newList.insertInLinkedList(99, 2);
+		newList.deleteNode(3);
 		
 		newList.printSingleLinkedList();
 		
+		System.out.println("Size: " + newList.getSize());
 	}
 
 }
