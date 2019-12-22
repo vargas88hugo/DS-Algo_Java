@@ -195,6 +195,9 @@ public class SingleLinkedList {
 		}
 	}
 	
+	/**
+	 * Delete the entire Single Linked List
+	 */
 	public void deleteLinkedList() {
 		head = null;
 		tail = null;
