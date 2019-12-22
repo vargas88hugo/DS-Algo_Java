@@ -1,4 +1,4 @@
-package SingleLinkedList;
+package com.linkedlist.singlelinkedlist;
 
 /**
  * This class provides the nodes of the Single Linked List. the nodes

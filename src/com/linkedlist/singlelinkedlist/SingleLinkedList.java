@@ -1,4 +1,4 @@
-package SingleLinkedList;
+package com.linkedlist.singlelinkedlist;
 
 /**
  * This class handles the node instances to build the structure of
