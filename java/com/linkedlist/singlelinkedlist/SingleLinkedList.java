@@ -142,7 +142,6 @@ public class SingleLinkedList {
 			return;
 		} else if (index == 0) {
 			head = head.getNext();
-			setSize(getSize() - 1);
 			if (getSize() == 0) {
 				tail = null;
 			}
