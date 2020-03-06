@@ -1,4 +1,4 @@
-package com.binarytree.binarytree;
+package com.binarytree.binarytreebyarray;
 
 public class BinaryTreeByArray {
 	int[] arr;
